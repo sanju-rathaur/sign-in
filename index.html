@@ -1,0 +1,209 @@
+.
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>www.https.coom</title>
+	<link rel="stylesheet" type="text/css" href="cope.css">
+</head>
+
+<body>
+
+	<!--
+	<span onclick="myFunction()" style="cursor: pointer;" id="top">😎</span>
+		<div class="main" style="display: none;" id="pop"></div>
+	<script>
+		
+		function myFunction(){
+			var x=document.getElementById("pop");
+			if(x.style.display == "none"){
+				x.style.display = "block";	
+			}
+			else{
+				
+				x.style.display = "none";
+			}
+		}
+		</script>
+	
+-->
+
+	<form name="myForm" onsubmit="return validateForm()">
+		<div style="width: 50%; height: auto; margin: 0 auto; background-color: dodgerblue; border: 5px solid black; border-radius: 10px; padding: 0 10px; margin-top: 15%;">
+			<div style="text-align: center; margin-bottom: 20px;"><span style="font-size: 30px;">Application Form</span></div>
+			<div style="width: 100%; height: auto;" class="margin-bottom">
+				<div style="width: 20%; display: inline-block; float: left;"><span style="font-size: 20px; margin-bottom: 20px;">Full name</span></div>
+				<div style="width: 80%; display: inline-block; float: left; margin-bottom: 20px;"><input type="text" style="outline: none; width: 100%; height: 35px; padding-left: 10px; border-radius: 10px;" oninput="txt_inp(this)" class="inp b-3-g" onkeypress="demo()" id="first" name="fname">
+					<div class="inside" id="second">
+						<span class="text-red">!Name must be filled</span>
+					</div>
+					<div class="inside" id="second4">
+						<span class="text-red">!Use only alphabet </span>
+					</div>
+				</div>
+			</div>
+
+
+			<div style="width: 100%; height: auto;">
+				<div style="width: 20%; display: inline-block; float: left;"><span style="font-size: 20px; margin-bottom: 20px;">Phone no</span> </div>
+				<div style="width: 80%; display: inline-block; float: left; margin-bottom: 20px;"><input type="text" style="outline: none; width: 100%; height: 35px; padding-left: 10px; border-radius: 10px;" oninput="txt_inp(this)" class="inp b-3-g" onkeypress="demo()" id="first1" name="phnno">
+					<div class="inside" id="second1">
+						<span class="text-red">!Phone no must be filled</span>
+					</div>
+					<div class="inside" id="second5">
+						<span class="text-red">!Enter a valid number</span>
+					</div>
+				</div>
+			</div>
+
+
+			<div style="width: 100%; height: auto;">
+				<div style="width: 20%; display: inline-block; float: left;"><span style="font-size: 20px;  margin-bottom: 20px;">Password</span></div>
+				<div style="width: 80%; display: inline-block; float: left;  margin-bottom: 20px;"><input type="password" style="outline: none; width: 100%; height: 35px; padding-left: 10px; border-radius: 10px;" oninput="txt_inp(this)" class="inp b-3-g" onkeypress="demo()" id="first2" name="pswd">
+					<div class="inside" id="second2">
+						<span class="text-red">!Password must be filled</span>
+					</div>
+					<div class="inside" id="second3">
+						<span class="text-red">!Enter 6 digit</span>
+					</div>
+				</div>
+			</div>
+
+
+			<div style="width: 100%; height: auto; text-align: center; margin-bottom: 10px;">
+				<button style="height: 30px; width: 100px; border: 2px solid black; border-radius: 10px; cursor: pointer; background-color: orange; font-size: 16px;" type="submit">Submit</button>
+			</div>
+
+
+		</div>
+
+
+		<script>
+			function txt_inp(input) {
+				if (/^\s/.test(input.value))
+					input.value = '';
+
+			}
+
+			function validateForm() {
+
+				var x = document.forms["myForm"]["fname"].value;
+				var y = document.getElementById("first");
+				var z = document.getElementById("second");
+				var p = document.getElementById("second4");
+				var f = document.getElementById("first");
+				if (x == "") {
+					y.classList.add("border-red");
+					z.classList.remove("inside");
+					f.classList.remove("inp");
+					document.getElementById("first").focus();
+					return false;
+				}
+				if (/^[a-z A-Z\s]*$/.test(x)) {
+
+				} else {
+					p.classList.remove("inside");
+					y.classList.add("border-red");
+					f.classList.remove("inp");
+					document.getElementById("first").focus();
+					return false;
+				}
+				var x1 = document.forms["myForm"]["phnno"].value;
+				var y1 = document.getElementById("first1");
+				var z1 = document.getElementById("second1");
+				var f1 = document.getElementById("first1");
+				var v1 = document.getElementById("second5");
+				if (x1 == "") {
+					y1.classList.add("border-red");
+					z1.classList.remove("inside");
+					f1.classList.remove("inp");
+					document.getElementById("first1").focus();
+					return false;
+				}
+				if (isNaN(x1)) {
+					y1.classList.add("border-red");
+					v1.classList.remove("inside");
+					f1.classList.remove("inp");
+					document.getElementById("first1").focus();
+					return false;
+				}
+
+
+
+				var x2 = document.forms["myForm"]["pswd"].value;
+				var y2 = document.getElementById("first2");
+				var z2 = document.getElementById("second2");
+				var f2 = document.getElementById("first2");
+				var d2 = document.getElementById("second3");
+				if (x2 == "") {
+					y2.classList.add("border-red");
+					z2.classList.remove("inside");
+					f2.classList.remove("inp");
+					document.getElementById("first2").focus();
+					return false;
+				}
+				if (x2.length < 6) {
+					y2.classList.add("border-red");
+					d2.classList.remove("inside");
+					f2.classList.remove("inp");
+					document.getElementById("first2").focus();
+					return false;
+				}
+			}
+
+
+			function demo() {
+
+				var x = document.forms["myForm"]["fname"].value;
+				var y = document.getElementById("first");
+				var z = document.getElementById("second");
+				var p = document.getElementById("second4");
+				var f = document.getElementById("first");
+				if (x == "") {
+					y.classList.remove("border-red");
+					z.classList.add("inside");
+					p.classList.add("inside");
+					f.classList.add("inp");
+					return false;
+				}
+
+				var x1 = document.forms["myForm"]["phnno"].value;
+				var y1 = document.getElementById("first1");
+				var z1 = document.getElementById("second1");
+				var f1 = document.getElementById("first1");
+				var vi = document.getElementById("second5");
+
+				y1.classList.remove("border-red");
+				z1.classList.add("inside");
+				f1.classList.add("inp");
+
+				if (isNaN(x1)) {
+					y1.classList.remove("border-red");
+					f1.classList.add("inp");
+					return false;
+				} else {
+					vi.classList.add("inside");
+				}
+				var x2 = document.forms["myForm"]["pswd"].value;
+				var y2 = document.getElementById("first2");
+				var z2 = document.getElementById("second2");
+				var f2 = document.getElementById("first2");
+				var d2 = document.getElementById("second3");
+
+				y2.classList.remove("border-red");
+				z2.classList.add("inside");
+				f2.classList.add("inp");
+				d2.classList.add("inside");
+
+
+				if (x2.length <= 6) {
+					f2.classList.add("inp");
+					return false;
+				}
+			}
+
+		</script>
+	</form>
+</body>
+
+</html>
